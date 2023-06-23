@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEED</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/f9e7930cca.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    #navbutton {
+        background-color: #7cc692;
+        color: #ffffff;
+    }
+    #navbutton:hover {
+        background-color: #fbfffa;
+        color:#7cc692;
+        border-color: #7cc692;
+    }
+    #navclick:hover {
+        color: #7cc692;
+        background-color: #fbfffa;
+    }
+    .container {
+        text-align: center;
+        margin-bottom: 100px;
+        margin-top: 60px;
+    }
+    #viewbutton {
+        color: #7cc692;
+        border-color: #7cc692;
+    }
+    #viewbutton:hover {
+        background-color: #7cc692;
+        color: #ffffff;
+    }
+    .card {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .card-image {
+        float: left;
+        max-height: 100%;
+        max-width: 50%;
+        margin-right: 10px;
+    }
+    .card-image img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+    .card-content {
+        flex: 1 1 auto;
+    }
+    #edit {
+        color: #7cc692;
+        border-color: #7cc692;
+        background-color: #ffffff;
+    }
+    #edit:hover {
+        background-color: #7cc692;
+        color: #ffffff;
+    } 
+    .field.is-horizontal .field-body {
+      flex-grow: 3;
+    }
+    .tile.is-parent {
+        display: flex;
+    }
+
+    .tile.is-child {
+        flex: 1;
+    }
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+    }
+    .trigger {
+        margin-top: 30px;
+        font-size: 24px;
+        padding: 16px 32px;
+        width: 50%;
+    }
+
+</style>
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item">
+                <i class="fas fa-seedling" style="color: #7cc692;"></i>
+                <span id = "navclick" class="navbar-text">SEED</span>
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <a id = "navclick" class="navbar-item" href="/">Home</a>
+                <a id = "navclick" class="navbar-item" href="/inventory">Plants</a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a id = "navclick" class="navbar-link">More</a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">About</a>
+                        <a class="navbar-item">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a id = "navbutton" class="button">Sign up</a>
+                        <a id = "navbutton" class="button">Log in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-content">
+                        <p class="title is-2">DOGWOOD</p>
+                    </div>
+                </div>
+                <p class="subtitle is-4">Category: <em></em></p>
+                <p class="subtitle is-4">Last Attended To: <em>04/05/2023</em></p>
+                <div class="content">
+                    <p>Requirements:</p>
+                </div>
+            </div>
+            <div class="button-container">
+                <button id="edit" class="trigger is-outlined is-large" data-target="editplant">
+                    Edit Plant
+                    <span class="icon is-medium">
+                        <i class="fas fa-pen"></i>
+                    </span>
+                </button>
+                <button id="edit" class="trigger is-outlined is-large" data-target="feed">
+                    Feed!
+                    <span class="icon is-medium">
+                        <i class="fas fa-hand-holding-droplet"></i>
+                    </span>
+                </button>
+            </div>
+                  <div id="editplant" class="modal">
+                    <div class="modal-background"></div>
+                    <div class="modal-card">
+                      <header class="modal-card-head">
+                        <p class="modal-card-title">Edit Plant:</p>
+                      </header>
+                      <section class="modal-card-body">
+                        <div class="field is-horizontal">
+                          <div class="field-label is-normal">
+                            <label class="label">Name:</label>
+                          </div>
+                          <div class="field-body">
+                            <div class="field">
+                              <p class="control">
+                                <input class="input" type="name">
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="field is-horizontal">
+                          <div class="field-label is-normal">
+                            <label class="label">Category:</label>
+                          </div>
+                          <div class="field-body">
+                            <div class="field">
+                              <p class="control">
+                                <input class="input" type="category">
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="field is-horizontal">
+                          <div class="field-label is-normal">
+                            <label class="label">Last Attended To:</label>
+                          </div>
+                          <div class="field-body">
+                            <div class="field">
+                              <p class="control">
+                                <input class="input" type="date">
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="field is-horizontal">
+                          <div class="field-label is-normal">
+                            <label class="label">Requirements:</label>
+                          </div>
+                          <div class="field-body">
+                            <div class="field">
+                              <p class="control">
+                                <input class="input" type="requirements">
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      <footer class="modal-card-foot">
+                        <button class="button is-success">Add</button>
+                        <button class="button">Cancel</button>
+                      </footer>
+                    </div>
+                    <button class="modal-close is-large" aria-label="close"></button>
+                  </div>
+            </div>
+            <script>
+              function toggleModal() {
+                var modal = document.getElementById("editplant");
+                modal.classList.toggle("is-active");
+              }
+            
+              document.getElementById("edit").addEventListener("click", toggleModal);
+            
+              var cancelButtons = document.querySelectorAll(".modal-card-foot .button");
+              cancelButtons.forEach(function(button) {
+                button.addEventListener("click", toggleModal);
+              });
+            </script>  
+            </div>
+          </div>
+    </div>
+</body>
+</html>
